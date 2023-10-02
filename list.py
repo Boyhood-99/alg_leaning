@@ -2,7 +2,37 @@ import math
 import numpy as np
 from typing import *
 
-#数组算法题
+l = [k*k for k in range(10)]
+print(l)
+print(sorted([k*k for k in range(10)]))
+
+class Array_():
+    def search_(self, num, tgt):
+        l, r = 0,len(num)-1
+        while l<=r:
+            middle = int(l+(r-l)/2)
+            if num[middle] ==tgt:
+                return middle
+            if num[middle]>tgt:
+                r == middle-1
+            elif num[middle]<tgt:
+                l ==middle+1
+      
+    def search(self, nums: List[int], target: int):
+        l ,r = 0, len(nums)-1
+        
+        while True:
+            m = int(l + (r -l)/2)
+            if target == nums[m]:
+                return m
+            if target < nums[m]:
+                r = m - 1
+            if target > nums[m]:
+                l = m + 1
+            if l <= r:
+                return None
+
+
 class Array():
 
     def search(self,nums:List[int],target:int):  #二分查找，区间左闭右闭
@@ -64,7 +94,7 @@ class Array():
         #     return 0
         return min_len,nums[i-1:j+1] if min_len<n+1 else 0
     
-    def generatematrix(self,n):         #生成螺旋矩阵
+    def generatematrix_(self,n):         #生成22
         nums=[[0]*n for _ in range(n)]
         startx,starty=0,0
         loop=n//2
@@ -93,10 +123,46 @@ class Array():
             nums[loop][loop]=num
 
         return nums
+    
+    def generatematrix(self,n):         #生成22
+        nums=[[0]*n for _ in range(n)]
+        startx,starty=0,0
+        loop=n//2
+       
+        num=1
+
+        for i in range(loop):
+            loop_len = n - 2*i
+            for j in range(starty, starty+loop_len-1):
+                nums[startx][j]=num
+                num+=1
+            for j in range(startx,startx+loop_len-1):
+                nums[j][starty+loop_len-1]=num
+                num+=1
+            
+            for j in range(starty+loop_len-1, starty,-1):
+                
+                nums[startx+loop_len-1][j]=num
+                num += 1
+            
+            for j in range(startx+loop_len-1, startx,-1):
+                nums[j][starty]=num
+                num += 1
+            
+
+            startx += 1
+            starty += 1
+
+        if n%2 != 0:
+            nums[loop][loop]=num
+
+        return nums
 
 
-
-
+a = list([1,3,2,])
+a.reverse()
+# print(a)
+# print(i for i in list(range(6,1,-1)).reverse())
 #实验
 s=Array()
 # a=s.sortedsquare(np.array([-1,0,2,5,6,7,8,9,11,13])-np.arange(10))#输入数组要求非递减
@@ -104,8 +170,10 @@ s=Array()
 # a=s.minsuuarraylen([2,3,1,2,4,3],7)
 # b=s.minsuuarraylen_([2,3,1,2,4,3],7)
 
-b=s.generatematrix(10)
-print(b)
+# b=s.generatematrix_(5)
+# print(b)
+
+
 
 
 

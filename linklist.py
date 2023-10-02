@@ -178,23 +178,16 @@ class LinkList():
         return self.head
         
 
-            
-
 
 l=LinkList()
 
-for i  in range(5):
+for i in range(5):
     l.append(i)
 
 
 l.remove(0)
 print(l.get(5))
 
-# print(l.deleteAtIndex(0))
-
-# l.reverseList()
-# l.reverseList1()
-# l.swapPair()
 l.removeNthFroEnd(4)
 
 a=list(l.items())

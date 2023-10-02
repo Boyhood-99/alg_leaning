@@ -81,27 +81,7 @@ class Hash():
 
         return all(ransom_count[i] <= magazine[i] for i in range(26))
 
-        # subs = magazine - ransom_count
-        # for i in subs:
-        #     if i < 0:
-        #         return False
-        #     return True
-
-
-    
-        # s = str(n)
-        # l = len(s)
-        # # shu=[]
-        # sum = 0
-        # for i in range(l):
-        #     j = l - i
-        #     shu_ = n // 10**(j - 1)
-        #     n = n - shu_*10**(j - 1)
-        #     # shu.append(shu_)
-        #     sum += shu_**2
-        # return sum
-
-    
+        
 # s = Hash()
 
 # print(s.isHappy(19))
