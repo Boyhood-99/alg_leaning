@@ -1,3 +1,5 @@
 # alg_leaning
-*list
-*linklist
+
+## leetcode coding
+
+## conclusion
