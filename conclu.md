@@ -41,10 +41,10 @@
 ### 常用激活函数
 
     Sigmoid：双侧饱和，0均值，导数最大为0.25
-![本地路径](conclusion\sigmoid.png)
+[sigmoid](conclusion\sigmoid.png)
 
     tanh：双侧饱和，0均值，导数0处最大，为1
-![本地路径](conclusion\tanh.png)
+[tanh](conclusion\tanh.png)
     relu ， leaky relu， erelu，为了解决梯度消失和梯度爆炸问题
     优点：relu解决了梯度消失、爆炸的问题
             计算方便，计算速度快
@@ -215,7 +215,7 @@ RNN的特点在于，对于一个输入序列的某个词元，它只考虑该�
 目标函数 ${{\max }_{\theta }}J(\theta )={{\max }_{\theta }}{{E}_{\tau \sim{{\pi }_{\theta }}}}R(\tau )={{\max }_{\theta }}\sum\limits_{\tau }{P}(\tau ;\theta )R(\tau )$
 最大化所有轨迹（奖励*概率）之和，将轨迹进行拆分，轨迹在$\pi_\theta(a|s)$下由状态转移概率和动作选择概率组成，其中状态转移概率只和环境有关。
 因此经过合理计算得到$J(\theta)$对$\theta$的导数为
-![本地路径](conclusion\1.png)
+![pg](conclusion\1.png)
 采样轨迹样本或者一段轨迹可以对策略进行梯度更新
 只需定义损失函数如下：$\mathcal{L}(a,s,r)=-\log \left( {{\pi }_{\theta }}(a\mid s) \right)r$
 ### REINFORCE 算法
